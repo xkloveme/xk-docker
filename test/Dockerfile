@@ -10,10 +10,11 @@ RUN pnpm build
 
 # 打包生产环境镜像
 
-FROM xkloveme/xk-nginx:latest as production-stage
+FROM registry.cn-hangzhou.aliyuncs.com/watone_docker/xk-nginx:latest as production-stage
 
 COPY --from=base /app/dist /usr/share/nginx/html
-COPY ./www /etc/nginx/
+COPY ./www /etc/nginx/www
+
 
 #EXPOSE 映射端口
 EXPOSE 3000

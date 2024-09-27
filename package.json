@@ -1,0 +1,12 @@
+{
+  "name": "xk-docker",
+  "version": "1.0.1",
+  "description": "pnpm docker image",
+  "author": "xkloveme",
+  "license": "ISC",
+  "scripts": {
+    "patch": "npm version patch && git push origin --tags",
+    "minor": "npm version minor && git push origin --tags",
+    "major": "npm version major && git push origin --tags"
+  }
+}

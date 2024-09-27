@@ -1,0 +1,6 @@
+FROM alpine:edge
+LABEL xkloveme xkloveme@gmail.com
+RUN apk update \
+    && apk add --no-cache --update nginx nginx-mod-http-brotli \
+    && rm -rf /var/cache/apk/* \
+    && nginx -v

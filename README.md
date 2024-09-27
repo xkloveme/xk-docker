@@ -51,7 +51,7 @@ v20.11.1
 9.11.0
 ```
 
-## V20
+## nginx
 
 ```sh
 docker pull xkloveme/xk-nginx:latest

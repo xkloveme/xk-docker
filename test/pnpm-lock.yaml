@@ -1,0 +1,16 @@
+lockfileVersion: '6.0'
+
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
+dependencies:
+  jxk:
+    specifier: ^0.1.11
+    version: 0.1.11
+
+packages:
+
+  /jxk@0.1.11:
+    resolution: {integrity: sha512-yasc8aYQwlMKFX2Pgw6PNfEABbZqN7TCMqPXsK2ztbjgrvCfcX5gZY2bvFS084hUgN/JNkubkNgWSlqS/J3TOg==}
+    dev: false

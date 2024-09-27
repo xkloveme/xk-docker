@@ -1,0 +1,15 @@
+{
+  "name": "docker-img",
+  "version": "1.0.0",
+  "description": "测试",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "mkdir -p dist && echo \"生成 dist/index.html 文件\" && echo \"$(date)\" > dist/index.html"
+  },
+  "author": "xkloveme",
+  "license": "ISC",
+  "dependencies": {
+    "jxk": "^0.1.11"
+  }
+}

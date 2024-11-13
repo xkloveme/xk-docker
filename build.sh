@@ -54,7 +54,7 @@ build_and_push() {
     retry_command "docker build \
         --build-arg NODE_VERSION=${version} \
         --build-arg OS_TYPE=${os_type} \
-        -f ./dockerfile.${version} \
+        -f ./Dockerfile.${version} \
         -t ${manifest_tag} ."
     
     # 推送镜像
@@ -67,7 +67,7 @@ build_nginx() {
     
     # 构建镜像
     retry_command "docker build \
-        -f ./dockerfile.nginx \
+        -f ./Dockerfile.nginx \
         -t ${registryNginx}:latest \
         -t ${registryNginx}:stable-alpine ."
     

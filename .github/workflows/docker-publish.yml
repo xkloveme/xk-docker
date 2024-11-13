@@ -40,12 +40,18 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
+      # 检查 Dockerfile 是否存在
+      - name: Check Dockerfile existence
+        run: |
+          echo "检查 Dockerfile.${{ matrix.node-version }} 是否存在"
+          ls -la Dockerfile.*
+
       # 构建并推送 Node.js 镜像
       - name: Build and push Node.js images
         uses: docker/build-push-action@v5
         with:
           context: .
-          file: ./dockerfile.${{ matrix.node-version }}
+          file: ./Dockerfile.${{ matrix.node-version }}
           platforms: linux/amd64,linux/arm64
           push: true
           tags: |
@@ -76,12 +82,18 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
+      # 检查 Dockerfile.nginx 是否存在
+      - name: Check Dockerfile.nginx existence
+        run: |
+          echo "检查 Dockerfile.nginx 是否存在"
+          ls -la Dockerfile.*
+
       # 构建并推送 Nginx 镜像
       - name: Build and push Nginx image
         uses: docker/build-push-action@v5
         with:
           context: .
-          file: ./dockerfile.nginx
+          file: ./Dockerfile.nginx
           platforms: linux/amd64,linux/arm64
           push: true
           tags: |

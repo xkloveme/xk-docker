@@ -1,4 +1,4 @@
-FROM node:16-alpine
+FROM node:20-alpine
 
 LABEL maintainer="xkloveme <xkloveme@gmail.com>"
 
@@ -17,4 +17,4 @@ RUN npm config set registry https://registry.npmmirror.com && \
 # 工作目录
 WORKDIR /app
 
-CMD ["node"]
+CMD ["node"] 

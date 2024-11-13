@@ -1,8 +1,18 @@
-FROM alpine:latest
-LABEL xkloveme="xkloveme@gmail.com"
+FROM alpine:3.19.1
+
+LABEL maintainer="xkloveme <xkloveme@gmail.com>"
+
+# 设置时区
+ENV TZ=Asia/Shanghai
+
 RUN apk update \
-    && apk add --no-cache --update nginx nginx-mod-http-brotli \
+    && apk add --no-cache --update nginx nginx-mod-http-brotli tzdata \
+    && ln -snf /usr/share/zoneinfo/$TZ /etc/localtime \
+    && echo $TZ > /etc/timezone \
     && rm -rf /var/cache/apk/*
 
 EXPOSE 3000
+
 COPY ./conf /etc/nginx
+
+CMD ["nginx", "-g", "daemon off;"]
